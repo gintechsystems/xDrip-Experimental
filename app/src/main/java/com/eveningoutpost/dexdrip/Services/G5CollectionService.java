@@ -361,7 +361,7 @@ public class G5CollectionService extends Service {
                     if (transmitterIdLastTwo.equals(deviceNameLastTwo)) {
 
                         device = btDevice;
-                        connectAfterDelay(2000, btDevice);
+                        connectAfterDelay(500, btDevice);
                         //connectToDevice(btDevice);
 
                     } else {
