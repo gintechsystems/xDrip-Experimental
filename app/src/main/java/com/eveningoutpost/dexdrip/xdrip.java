@@ -23,7 +23,11 @@ public class xdrip extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Fabric.with(this, new Crashlytics());
+        if (!BuildConfig.DEBUG) {
+            // Only run Crashlytics when we are not in debug mode.
+            Fabric.with(this, new Crashlytics());
+        }
+
         Context context = getApplicationContext();
         CollectionServiceStarter collectionServiceStarter = new CollectionServiceStarter(context);
         collectionServiceStarter.start(getApplicationContext());
